@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-pushnotification-parsepushnotification.parsepushnotification", function(require, exports, module) {
 
 module.exports = {
 
@@ -89,10 +90,10 @@ module.exports = {
         ); 
     },	
 */	
-	subscribeToChannel: function(channel) {
+	subscribeToChannel: function(channel, successfulCallback) {
 		var self = this;	
         cordova.exec(
-            null,
+                     function(result){return successfulCallback(result)},
             null,
             'ParsePushNotificationPlugin',
             'subscribeToChannel',
@@ -121,3 +122,5 @@ module.exports = {
 	onUnsubscribeFailed: null	
 };
 
+
+});

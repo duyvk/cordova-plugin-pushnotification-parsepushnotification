@@ -1,5 +1,3 @@
-cordova.define("cordova-plugin-pushnotification-parsepushnotification.parsepushnotification", function(require, exports, module) {
-
 module.exports = {
 
 	setUp: function(appId, clientKey) {
@@ -121,6 +119,4 @@ module.exports = {
 	onUnsubscribeSucceeded: null,
 	onUnsubscribeFailed: null	
 };
-
-
-});
+};

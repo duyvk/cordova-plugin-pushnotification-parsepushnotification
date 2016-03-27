@@ -84,6 +84,10 @@
     
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+
+    if  (currentInstallation.deviceToken == [NSNull null])
+       [self _subscribeToChannel:channel];
+   
     [currentInstallation addUniqueObject:channel forKey:@"channels"];
     [currentInstallation save];
     
